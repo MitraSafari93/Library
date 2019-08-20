@@ -25,24 +25,35 @@ namespace LibraryProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox1.Text))
+            try
             {
-                int ID = Int32.Parse(textBox1.Text);
-                using (BlogDbContext mc = new BlogDbContext())
+                if (!string.IsNullOrEmpty(textBox1.Text))
                 {
-                    BookTbl removeBook = mc.BookTbls.Where(c => c.ID == ID).FirstOrDefault();
-                    if (removeBook != null)
+                    int ID = Int32.Parse(textBox1.Text);
+                    using (BlogDbContext mc = new BlogDbContext())
                     {
-                        mc.BookTbls.Remove((BookTbl)removeBook);
-                        MessageBox.Show("The book removed successfully.");
-                        mc.SaveChanges();
+                        BookTbl removeBook = mc.BookTbls.Where(c => c.ID == ID).FirstOrDefault();
+                        if (removeBook != null)
+                        {
+                            mc.BookTbls.Remove((BookTbl)removeBook);
+                            MessageBox.Show("The book removed successfully.");
+                            mc.SaveChanges();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Book not found.","NOT FOUND!");
+                        }
+                        this.Close();
                     }
-                    else
-                    {
-                        MessageBox.Show("Book not found.");
-                    }
-                    this.Close();
                 }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("ID must be a number!", "INCORRECT FORMAT!");
+            }
+            catch (OverflowException ex)
+            {
+                MessageBox.Show(ex.Message, "OVERFLOW!");
             }
             
         }

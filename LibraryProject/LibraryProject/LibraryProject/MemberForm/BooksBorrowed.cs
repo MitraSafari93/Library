@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,7 @@ namespace LibraryProject.Borrow
         {
            using (BlogDbContext mc = new BlogDbContext())
            {
-               var name= mc.Database.SqlQuery<MembersTbl>("select * from MembersTbl where Idmember={0}",UserID).FirstOrDefault();
+               var name= mc.Database.SqlQuery<MembersTbl>("select * from MembersTbls where ID={0}",UserID).FirstOrDefault();
                return name.FullName;
            }
         }
@@ -134,6 +135,8 @@ namespace LibraryProject.Borrow
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (dataGridView2.SelectedRows.Count == 0)
+                return;
             Info _inftbl = (Info)dataGridView2.SelectedRows[0].DataBoundItem;
             ReturnBook(_inftbl.BookID, _inftbl.ID);
             this.Close();
@@ -160,45 +163,60 @@ namespace LibraryProject.Borrow
             using (BlogDbContext mc = new BlogDbContext())
             {
                 _lbl_s.Text = "";
-                
-                string str = "select * from BookTbl where ";
-                bool tmp = false;
-                if (!string.IsNullOrEmpty(_txt_ID.Text))
+                try
                 {
-                    int ID = Convert.ToInt32(_txt_ID.Text);
-                    str += "BookID=" +ID;
+                    string str = "select * from BookTbls where ";
+                    bool tmp = false;
+                    if (!string.IsNullOrEmpty(_txt_ID.Text))
+                    {
+                        int ID = Convert.ToInt32(_txt_ID.Text);
+                        str += "ID like N'%" + ID + "%'";
 
-                    tmp = true;
-                }
-                if (!string.IsNullOrEmpty(_txt_title.Text))
-                {
-                    if (tmp)
-                        str += " and ";
-                    str += "title=N'" + _txt_title.Text + "'";
-                    tmp = true;
-                }
+                        tmp = true;
+                    }
+                    if (!string.IsNullOrEmpty(_txt_title.Text))
+                    {
+                        if (tmp)
+                            str += " and ";
+                        str += "title like N'%" + _txt_title.Text + "%'";
+                        tmp = true;
+                    }
 
-                if (!string.IsNullOrEmpty(_txt_author.Text))
-                {
-                    if (tmp)
-                        str += " and ";
-                     str += " author=N'" + _txt_author.Text + "'";
-                    tmp = true;
+                    if (!string.IsNullOrEmpty(_txt_author.Text))
+                    {
+                        if (tmp)
+                            str += " and ";
+                        str += " author like N'%" + _txt_author.Text + "%'";
+                        tmp = true;
+                    }
+                    if (!string.IsNullOrEmpty(_txt_publisher.Text))
+                    {
+                        if (tmp)
+                            str += " and ";
+                        str += " publisher like N'%" + _txt_publisher.Text + "%'";
+                        tmp = true;
+                    }
+                    if (!tmp)
+                    {
+                        str = "select * from BookTbls";
+                    }
+                    var _search = mc.Database.SqlQuery<BookTbl>(str).ToList();
+                    if (_search.FirstOrDefault() != null)
+                    {
+                        dataGridView3.DataSource = _search.ToList();
+                    }
+                    else
+                    {
+                        _lbl_s.Text = "نتیجه ای یافت نشد";
+                    }
                 }
-                if (!string.IsNullOrEmpty(_txt_publisher.Text))
+                catch (FormatException)
                 {
-                    if (tmp)
-                        str += " and ";
-                    str += " publisher= N'" + _txt_publisher.Text + "'";
+                    MessageBox.Show("ID must be a number.", "ATTENTION");
                 }
-                var _search = mc.Database.SqlQuery<BookTbl>(str).ToList();
-                if (_search.FirstOrDefault() != null)
+                catch (OverflowException ex)
                 {
-                    dataGridView3.DataSource = _search.ToList();
-                }
-                else
-                {
-                    _lbl_s.Text = "نتیجه ای یافت نشد";
+                    MessageBox.Show(ex.Message, "OVERFLOW!");
                 }
             }
         }
@@ -210,6 +228,10 @@ namespace LibraryProject.Borrow
 
         private void _btn_Borrow_Click(object sender, EventArgs e)
         {
+            if (dataGridView3.SelectedRows.Count == 0)
+            {
+                return;
+            }
             BookTbl _infBook = (BookTbl)dataGridView3.SelectedRows[0].DataBoundItem;
             BookID = _infBook.ID;
             using (BlogDbContext mc = new BlogDbContext())
@@ -246,10 +268,6 @@ namespace LibraryProject.Borrow
             }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
 
     }
     public class Info

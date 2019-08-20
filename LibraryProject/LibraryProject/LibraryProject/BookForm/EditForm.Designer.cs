@@ -93,7 +93,7 @@
             // 
             // mColID
             // 
-            this.mColID.DataPropertyName = "bookID";
+            this.mColID.DataPropertyName = "ID";
             this.mColID.HeaderText = "شناسه";
             this.mColID.Name = "mColID";
             this.mColID.ReadOnly = true;

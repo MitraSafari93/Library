@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,11 @@ namespace LibraryProject
         {
             using (BlogDbContext mc = new BlogDbContext())
             {   
-                string str = "select * from BookTbl where ";
+                string str = "select * from BookTbls where ";
                 bool tmp=false;
                 if (CheckEmptyText(textBox1.Text))
                 {
-                  str += "title=N'" + textBox1.Text+ "'";
+                  str += "title like N'%" + textBox1.Text+ "%'";
                  tmp = true ;
                 }
 
@@ -35,21 +36,22 @@ namespace LibraryProject
                 {
                     if (tmp)
                         str += " and ";
-                    str += " author=N'" + textBox2.Text + "'";
+                    str += " author like N'%" + textBox2.Text + "%'";
                     tmp = true;
                 }
                 if (CheckEmptyText(textBox3.Text))
                 {
                     if (tmp)
                         str += " and ";
-                    str += " publisher= N'" + textBox3.Text + "'";
+                    str += " publisherlike N'%" + textBox3.Text + "%'";
                     tmp = true;
                 }
-                if (tmp)
+                if (!tmp)
                 {
-                    var search = mc.Database.SqlQuery<BookTbl>(str);
-                    dataGridView2.DataSource = search.ToList();
+                    str = "select * from BookTbls";
                 }
+                var search = mc.Database.SqlQuery<BookTbl>(str);
+                dataGridView2.DataSource = search.ToList();
             }
         }
         private bool CheckEmptyText(string txt)

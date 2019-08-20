@@ -25,19 +25,34 @@ namespace LibraryProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int ID = int.Parse(textBox1.Text);
-            using (BlogDbContext mc = new BlogDbContext()) {
-                MembersTbl removeMem = mc.MembersTbls.Where(x => x.ID == ID).FirstOrDefault();
-                if (removeMem != null)
+            if (!string.IsNullOrEmpty(textBox1.Text))
+            {
+                try
                 {
-                    mc.MembersTbls.Remove(removeMem);
-                    mc.SaveChanges();
-                    MessageBox.Show("The member removed successfully");
+                    int ID = int.Parse(textBox1.Text);
+                    using (BlogDbContext mc = new BlogDbContext())
+                    {
+                        MembersTbl removeMem = mc.MembersTbls.Where(x => x.ID == ID).FirstOrDefault();
+                        if (removeMem != null)
+                        {
+                            mc.MembersTbls.Remove(removeMem);
+                            mc.SaveChanges();
+                            MessageBox.Show("The member removed successfully.");
+                        }
+                        else
+                            MessageBox.Show("Member not found.", "NOT FOUND!");
+                    }
+                    this.Close();
                 }
-                else
-                    MessageBox.Show("Member not found");
+                catch (FormatException)
+                {
+                    MessageBox.Show("ID must be a number!", "INCORRECT FORMAT!");
+                }
+                catch (OverflowException ex)
+                {
+                    MessageBox.Show(ex.Message, "OVERFLOW!");
+                }
             }
-            this.Close();
         }
 
         private void DeleteForm_Load(object sender, EventArgs e)

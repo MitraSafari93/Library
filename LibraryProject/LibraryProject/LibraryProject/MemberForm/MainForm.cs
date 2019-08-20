@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,10 +43,10 @@ namespace LibraryProject
 
         private void btn_SearchB_Click(object sender, EventArgs e)
         {
-            Form5 F5 = new Form5();
-            F5.MdiParent = this.MdiParent;
-            F5.FormClosed +=F5_FormClosed;
-            F5.Show();
+                Form5 F5 = new Form5();
+                F5.MdiParent = this.MdiParent;
+                F5.FormClosed += F5_FormClosed;
+                F5.Show();
         }
 
         private void F5_FormClosed(object sender, FormClosedEventArgs e)
@@ -78,16 +79,28 @@ namespace LibraryProject
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MembersTbl _member = (MembersTbl)dataGridView1.SelectedRows[0].DataBoundItem;
-            Form3 frm3 = new Form3(_member.ID);
-            frm3.Show();
+            try
+            {
+                MembersTbl _member = (MembersTbl)dataGridView1.SelectedRows[0].DataBoundItem;
+                Form3 frm3 = new Form3(_member.ID);
+                frm3.Show();
+            }
+            catch (ArgumentOutOfRangeException) { }
         }
 
         private void LoadForm()
         {
-             using (BlogDbContext mc = new BlogDbContext()) {
-                var listm=mc.MembersTbls.Where(m => true);
-                dataGridView1.DataSource = listm.ToList();
+            try
+            {
+                using (BlogDbContext mc = new BlogDbContext())
+                {
+                    var listm = mc.MembersTbls.Where(m => true);
+                    dataGridView1.DataSource = listm.ToList();
+                }
+            }
+            catch (ProviderIncompatibleException)
+            {
+                throw;
             }
         }
 

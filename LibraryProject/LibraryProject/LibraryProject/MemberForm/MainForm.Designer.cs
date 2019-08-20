@@ -70,7 +70,7 @@
             // 
             // mColID
             // 
-            this.mColID.DataPropertyName = "IDmember";
+            this.mColID.DataPropertyName = "ID";
             this.mColID.HeaderText = "شناسه کاربری ";
             this.mColID.Name = "mColID";
             this.mColID.ReadOnly = true;
