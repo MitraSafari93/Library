@@ -137,6 +137,10 @@
     <Compile Include="Migrations\201907312004475_init.Designer.cs">
       <DependentUpon>201907312004475_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908201757014_littleChange.cs" />
+    <Compile Include="Migrations\201908201757014_littleChange.Designer.cs">
+      <DependentUpon>201908201757014_littleChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BookTbl.cs" />
     <Compile Include="Model\BorrowerTbl.cs" />
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907312004475_init.resx">
       <DependentUpon>201907312004475_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908201757014_littleChange.resx">
+      <DependentUpon>201908201757014_littleChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

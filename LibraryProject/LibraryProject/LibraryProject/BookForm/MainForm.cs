@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,9 +39,9 @@ namespace LibraryProject
 
         private void btn_SearchB_Click(object sender, EventArgs e)
         {
-            _SearchForm F4 = new _SearchForm();
-            F4.MdiParent = this.MdiParent;
-            F4.Show();
+                _SearchForm F4 = new _SearchForm();
+                F4.MdiParent = this.MdiParent;
+                F4.Show();
         }
 
         private void F4_FormClosed(object sender, FormClosedEventArgs e)
@@ -72,11 +74,15 @@ namespace LibraryProject
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-          
-            BookTbl _Book = ((BookTbl)(dataGridView2.SelectedRows[0].DataBoundItem));
-            Form2 F2 = new Form2(_Book.ID);
-            F2.FormClosed += F2_FormClosed;
-            F2.Show();
+            try
+            {
+                BookTbl _Book = ((BookTbl)(dataGridView2.SelectedRows[0].DataBoundItem));
+                Form2 F2 = new Form2(_Book.ID);
+                F2.FormClosed += F2_FormClosed;
+                F2.Show();
+            }
+            catch(NullReferenceException) {
+            }
         }
 
         private void F2_FormClosed(object sender, FormClosedEventArgs e)
@@ -88,11 +94,17 @@ namespace LibraryProject
 
         private void LoadForm()
         {
-            using (BlogDbContext mc = new BlogDbContext())
+            try
             {
-                var ListBook = mc.BookTbls.Where(x => true);
-                if(ListBook.Count()!=0)
-                    dataGridView2.DataSource = ListBook.ToList();
+                using (BlogDbContext mc = new BlogDbContext())
+                {
+                    var ListBook = mc.BookTbls.Where(x => true);
+                    if (ListBook.Count() != 0)
+                        dataGridView2.DataSource = ListBook.ToList();
+                }
+            }
+            catch(ProviderIncompatibleException) {
+                throw;
             }
         }
 

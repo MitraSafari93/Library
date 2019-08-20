@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this._txt_author = new System.Windows.Forms.TextBox();
-            this._txt_publisher = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this._btnSearch = new System.Windows.Forms.Button();
-            this._btn_Borrow = new System.Windows.Forms.Button();
-            this._txt_title = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this._txt_ID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this._lbl_Status = new System.Windows.Forms.Label();
-            this._lbl_s = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this._lbl_s = new System.Windows.Forms.Label();
+            this._lbl_Status = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this._txt_ID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this._txt_title = new System.Windows.Forms.TextBox();
+            this._btn_Borrow = new System.Windows.Forms.Button();
+            this._btnSearch = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this._txt_publisher = new System.Windows.Forms.TextBox();
+            this._txt_author = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_name = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_userID = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.txt_userID = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.mColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tab = new System.Windows.Forms.TabControl();
             this.tabPage3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -82,130 +82,8 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(882, 427);
             this.tabPage3.TabIndex = 1;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Borrow Book";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this._lbl_s);
-            this.groupBox2.Controls.Add(this._lbl_Status);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this._txt_ID);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this._txt_title);
-            this.groupBox2.Controls.Add(this._btn_Borrow);
-            this.groupBox2.Controls.Add(this._btnSearch);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this._txt_publisher);
-            this.groupBox2.Controls.Add(this._txt_author);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 421);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // _txt_author
-            // 
-            this._txt_author.Location = new System.Drawing.Point(63, 68);
-            this._txt_author.Name = "_txt_author";
-            this._txt_author.Size = new System.Drawing.Size(145, 20);
-            this._txt_author.TabIndex = 4;
-            // 
-            // _txt_publisher
-            // 
-            this._txt_publisher.Location = new System.Drawing.Point(63, 94);
-            this._txt_publisher.Name = "_txt_publisher";
-            this._txt_publisher.Size = new System.Drawing.Size(145, 20);
-            this._txt_publisher.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 97);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Publisher";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 71);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Author";
-            // 
-            // _btnSearch
-            // 
-            this._btnSearch.Location = new System.Drawing.Point(133, 120);
-            this._btnSearch.Name = "_btnSearch";
-            this._btnSearch.Size = new System.Drawing.Size(75, 23);
-            this._btnSearch.TabIndex = 1;
-            this._btnSearch.Text = "Search";
-            this._btnSearch.UseVisualStyleBackColor = true;
-            this._btnSearch.Click += new System.EventHandler(this._btnSearch_Click);
-            // 
-            // _btn_Borrow
-            // 
-            this._btn_Borrow.Location = new System.Drawing.Point(133, 149);
-            this._btn_Borrow.Name = "_btn_Borrow";
-            this._btn_Borrow.Size = new System.Drawing.Size(75, 23);
-            this._btn_Borrow.TabIndex = 10;
-            this._btn_Borrow.Text = "Borrow";
-            this._btn_Borrow.UseVisualStyleBackColor = true;
-            this._btn_Borrow.Click += new System.EventHandler(this._btn_Borrow_Click);
-            // 
-            // _txt_title
-            // 
-            this._txt_title.Location = new System.Drawing.Point(63, 42);
-            this._txt_title.Name = "_txt_title";
-            this._txt_title.Size = new System.Drawing.Size(145, 20);
-            this._txt_title.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Title";
-            // 
-            // _txt_ID
-            // 
-            this._txt_ID.Location = new System.Drawing.Point(63, 16);
-            this._txt_ID.Name = "_txt_ID";
-            this._txt_ID.Size = new System.Drawing.Size(145, 20);
-            this._txt_ID.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(18, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "ID";
-            // 
-            // _lbl_Status
-            // 
-            this._lbl_Status.AutoSize = true;
-            this._lbl_Status.Location = new System.Drawing.Point(19, 196);
-            this._lbl_Status.Name = "_lbl_Status";
-            this._lbl_Status.Size = new System.Drawing.Size(0, 13);
-            this._lbl_Status.TabIndex = 13;
-            // 
-            // _lbl_s
-            // 
-            this._lbl_s.AutoSize = true;
-            this._lbl_s.Location = new System.Drawing.Point(60, 196);
-            this._lbl_s.Name = "_lbl_s";
-            this._lbl_s.Size = new System.Drawing.Size(0, 13);
-            this._lbl_s.TabIndex = 14;
             // 
             // groupBox3
             // 
@@ -234,28 +112,20 @@
             this.dataGridView3.Size = new System.Drawing.Size(649, 402);
             this.dataGridView3.TabIndex = 14;
             // 
-            // dataGridViewCheckBoxColumn2
+            // dataGridViewTextBoxColumn10
             // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "available";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "موجود در قفسه";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "شناسه";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 50;
             // 
-            // dataGridViewTextBoxColumn14
+            // dataGridViewTextBoxColumn11
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "translator";
-            this.dataGridViewTextBoxColumn14.HeaderText = "مترجم";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "publisher";
-            this.dataGridViewTextBoxColumn13.HeaderText = " انتشارات";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 150;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "title";
+            this.dataGridViewTextBoxColumn11.HeaderText = "عنوان";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 150;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -265,20 +135,149 @@
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Width = 150;
             // 
-            // dataGridViewTextBoxColumn11
+            // dataGridViewTextBoxColumn13
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "title";
-            this.dataGridViewTextBoxColumn11.HeaderText = "عنوان";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 150;
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "publisher";
+            this.dataGridViewTextBoxColumn13.HeaderText = " انتشارات";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 150;
             // 
-            // dataGridViewTextBoxColumn10
+            // dataGridViewTextBoxColumn14
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn10.HeaderText = "شناسه";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 50;
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "translator";
+            this.dataGridViewTextBoxColumn14.HeaderText = "مترجم";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 150;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "available";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "موجود در قفسه";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this._lbl_s);
+            this.groupBox2.Controls.Add(this._lbl_Status);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this._txt_ID);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this._txt_title);
+            this.groupBox2.Controls.Add(this._btn_Borrow);
+            this.groupBox2.Controls.Add(this._btnSearch);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this._txt_publisher);
+            this.groupBox2.Controls.Add(this._txt_author);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(221, 421);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            // 
+            // _lbl_s
+            // 
+            this._lbl_s.AutoSize = true;
+            this._lbl_s.Location = new System.Drawing.Point(60, 196);
+            this._lbl_s.Name = "_lbl_s";
+            this._lbl_s.Size = new System.Drawing.Size(0, 13);
+            this._lbl_s.TabIndex = 14;
+            // 
+            // _lbl_Status
+            // 
+            this._lbl_Status.AutoSize = true;
+            this._lbl_Status.Location = new System.Drawing.Point(19, 196);
+            this._lbl_Status.Name = "_lbl_Status";
+            this._lbl_Status.Size = new System.Drawing.Size(0, 13);
+            this._lbl_Status.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(18, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "ID";
+            // 
+            // _txt_ID
+            // 
+            this._txt_ID.Location = new System.Drawing.Point(63, 16);
+            this._txt_ID.Name = "_txt_ID";
+            this._txt_ID.Size = new System.Drawing.Size(145, 20);
+            this._txt_ID.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(30, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Title";
+            // 
+            // _txt_title
+            // 
+            this._txt_title.Location = new System.Drawing.Point(63, 42);
+            this._txt_title.Name = "_txt_title";
+            this._txt_title.Size = new System.Drawing.Size(145, 20);
+            this._txt_title.TabIndex = 0;
+            // 
+            // _btn_Borrow
+            // 
+            this._btn_Borrow.Location = new System.Drawing.Point(133, 149);
+            this._btn_Borrow.Name = "_btn_Borrow";
+            this._btn_Borrow.Size = new System.Drawing.Size(75, 23);
+            this._btn_Borrow.TabIndex = 10;
+            this._btn_Borrow.Text = "Borrow";
+            this._btn_Borrow.UseVisualStyleBackColor = true;
+            this._btn_Borrow.Click += new System.EventHandler(this._btn_Borrow_Click);
+            // 
+            // _btnSearch
+            // 
+            this._btnSearch.Location = new System.Drawing.Point(133, 120);
+            this._btnSearch.Name = "_btnSearch";
+            this._btnSearch.Size = new System.Drawing.Size(75, 23);
+            this._btnSearch.TabIndex = 1;
+            this._btnSearch.Text = "Search";
+            this._btnSearch.UseVisualStyleBackColor = true;
+            this._btnSearch.Click += new System.EventHandler(this._btnSearch_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Author";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 97);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Publisher";
+            // 
+            // _txt_publisher
+            // 
+            this._txt_publisher.Location = new System.Drawing.Point(63, 94);
+            this._txt_publisher.Name = "_txt_publisher";
+            this._txt_publisher.Size = new System.Drawing.Size(145, 20);
+            this._txt_publisher.TabIndex = 5;
+            // 
+            // _txt_author
+            // 
+            this._txt_author.Location = new System.Drawing.Point(63, 68);
+            this._txt_author.Name = "_txt_author";
+            this._txt_author.Size = new System.Drawing.Size(145, 20);
+            this._txt_author.TabIndex = 4;
             // 
             // tabPage1
             // 
@@ -293,17 +292,52 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(882, 427);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Situation";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // button1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Name";
+            this.button1.Location = new System.Drawing.Point(59, 163);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Return Book";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txt_userID
+            // 
+            this.txt_userID.Location = new System.Drawing.Point(59, 13);
+            this.txt_userID.Name = "txt_userID";
+            this.txt_userID.ReadOnly = true;
+            this.txt_userID.Size = new System.Drawing.Size(100, 20);
+            this.txt_userID.TabIndex = 22;
+            // 
+            // txt_name
+            // 
+            this.txt_name.Location = new System.Drawing.Point(59, 39);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.ReadOnly = true;
+            this.txt_name.Size = new System.Drawing.Size(100, 20);
+            this.txt_name.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "User ID";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Borrowed";
             // 
             // dataGridView2
             // 
@@ -322,19 +356,18 @@
             this.dataGridView2.TabIndex = 26;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn4
+            // mColID
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Translator";
-            this.dataGridViewTextBoxColumn4.HeaderText = "مترجم";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.mColID.DataPropertyName = "ID";
+            this.mColID.HeaderText = "شناسه";
+            this.mColID.Name = "mColID";
+            this.mColID.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Publisher";
-            this.dataGridViewTextBoxColumn3.HeaderText = " انتشارات";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn1.HeaderText = "عنوان";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -343,92 +376,58 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Title";
-            this.dataGridViewTextBoxColumn1.HeaderText = "عنوان";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Publisher";
+            this.dataGridViewTextBoxColumn3.HeaderText = " انتشارات";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // mColID
+            // dataGridViewTextBoxColumn4
             // 
-            this.mColID.DataPropertyName = "ID";
-            this.mColID.HeaderText = "شناسه";
-            this.mColID.Name = "mColID";
-            this.mColID.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Translator";
+            this.dataGridViewTextBoxColumn4.HeaderText = "مترجم";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // txt_name
+            // label4
             // 
-            this.txt_name.Location = new System.Drawing.Point(59, 39);
-            this.txt_name.Name = "txt_name";
-            this.txt_name.ReadOnly = true;
-            this.txt_name.Size = new System.Drawing.Size(100, 20);
-            this.txt_name.TabIndex = 24;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Name";
             // 
-            // label1
+            // tab
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Borrowed";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "User ID";
-            // 
-            // txt_userID
-            // 
-            this.txt_userID.Location = new System.Drawing.Point(59, 13);
-            this.txt_userID.Name = "txt_userID";
-            this.txt_userID.ReadOnly = true;
-            this.txt_userID.Size = new System.Drawing.Size(100, 20);
-            this.txt_userID.TabIndex = 22;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(59, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Return Book";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(890, 453);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tab.Controls.Add(this.tabPage1);
+            this.tab.Controls.Add(this.tabPage3);
+            this.tab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab.Location = new System.Drawing.Point(0, 0);
+            this.tab.Name = "tab";
+            this.tab.SelectedIndex = 0;
+            this.tab.Size = new System.Drawing.Size(890, 453);
+            this.tab.TabIndex = 0;
+            this.tab.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // BooksBorrowed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 453);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tab);
             this.Name = "BooksBorrowed";
             this.Text = "BooksBorrowed";
             this.tabPage3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -470,7 +469,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tab;
 
     }
 }

@@ -23,11 +23,11 @@ namespace LibraryProject
             using (BlogDbContext mc = new BlogDbContext())
             {
                 List<MembersTbl> tList = new List<MembersTbl>();
-                string str = "select * from MembersTbl where ";
+                string str = "select * from MembersTbls where ";
                 bool tmp = false;
                 if (CheckEmptyText(textBox1.Text))
                 {
-                    str += "FullName=N'" + textBox1.Text + "'";
+                    str += "FullName like N'%" + textBox1.Text + "%'";
                     tmp = true;
                 }
 
@@ -35,19 +35,22 @@ namespace LibraryProject
                 {
                     if (tmp)
                         str += " and ";
-                    str += " City=N'" + textBox2.Text + "'";
+                    str += " City like N'%" + textBox2.Text + "%'";
                     tmp = true;
                 }
                 if (CheckEmptyText(textBox3.Text))
                 {
                     if (tmp)
                         str += " and ";
-                    str += " Address= N'" + textBox3.Text + "'";
+                    str += " Address like N'%" + textBox3.Text + "%'";
+                    tmp = true;
                 }
-
-                    var Msearch = mc.Database.SqlQuery<MembersTbl>(str);
-                    dataGridView1.DataSource = Msearch.ToList();
-                
+                if (!tmp)
+                {
+                    str = "select * from MembersTbls";
+                }
+                var Msearch = mc.Database.SqlQuery<MembersTbl>(str);
+                dataGridView1.DataSource = Msearch.ToList();
             }
         }
 

@@ -95,49 +95,62 @@ namespace LibraryProject
                     this.Close();
                 }
 
-                private void btn_save_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            if (!validDataForm())
+                return;
+
+            using (BlogDbContext le2 = new BlogDbContext())
+            {
+
+                try
                 {
-                    if (!validDataForm())
-                        return;
 
-                    using (BlogDbContext le2 = new BlogDbContext())
+                    if (condition == Condition.Add)
                     {
-                       
-                        if (condition == Condition.Add)
+                        MembersTbl mtbl = new MembersTbl()
                         {
-                            MembersTbl mtbl = new MembersTbl()
-                            {
-                                FullName = textBox1.Text,
-                                City = textBox2.Text,
-                                Address = textBox3.Text,
-                                PhoneNumber = Int32.Parse(textBox4.Text),
-                                JoinDate = (DateTime)dateTimePicker1.Value,
-                                ExpiryDate = new DateTime(dateTimePicker1.Value.Year+1,dateTimePicker1.Value.Month,dateTimePicker1.Value.Day)
+                            FullName = textBox1.Text,
+                            City = textBox2.Text,
+                            Address = textBox3.Text,
+                            PhoneNumber = Int32.Parse(textBox4.Text),
+                            JoinDate = (DateTime)dateTimePicker1.Value,
+                            ExpiryDate = new DateTime(dateTimePicker1.Value.Year + 1, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day)
 
-                            };
-                            le2.MembersTbls.Add(mtbl);
+                        };
+                        le2.MembersTbls.Add(mtbl);
+                        le2.SaveChanges();
+                    }
+                    else
+                    {
+                        MembersTbl mtbl = le2.MembersTbls.Where(x => x.ID == this.ID).FirstOrDefault();
+                        if (mtbl != null)
+                        {
+                            mtbl.FullName = textBox1.Text;
+                            mtbl.City = textBox2.Text;
+                            mtbl.Address = textBox3.Text;
+                            mtbl.PhoneNumber = Int32.Parse(textBox4.Text);
+                            mtbl.JoinDate = (DateTime)dateTimePicker1.Value;
+                            mtbl.ExpiryDate = new DateTime(dateTimePicker1.Value.Year + 1, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
+
                             le2.SaveChanges();
                         }
-                        else
-                        {
-                            MembersTbl mtbl = le2.MembersTbls.Where(x => x.ID == this.ID).FirstOrDefault();
-                            if (mtbl != null)
-                            {
-                                mtbl.FullName = textBox1.Text;
-                                mtbl.City = textBox2.Text;
-                                mtbl.Address = textBox3.Text;
-                                mtbl.PhoneNumber = Int32.Parse(textBox4.Text);
-                                mtbl.JoinDate = (DateTime)dateTimePicker1.Value;
-                                mtbl.ExpiryDate = new DateTime(dateTimePicker1.Value.Year + 1, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
-
-                                le2.SaveChanges();
-                            }
-                        }
-
-                        this.Close();
-
                     }
+
+
+                    this.Close();
                 }
+                catch (FormatException)
+                {
+                    MessageBox.Show("For inserting Phone number turn your keyboard Language to English .", "ATTENTION");
+                }
+                catch (OverflowException ex)
+                {
+                    MessageBox.Show(ex.Message, "OVERFLOW!");
+                }
+
+            }
+        }
 
         private void Form3_Load(object sender, EventArgs e)
         {
