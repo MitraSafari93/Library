@@ -83,9 +83,15 @@ namespace LibraryProject
             {
                 MembersTbl _member = (MembersTbl)dataGridView1.SelectedRows[0].DataBoundItem;
                 Form3 frm3 = new Form3(_member.ID);
+                frm3.FormClosed += F3_FormClosed;
                 frm3.Show();
             }
             catch (ArgumentOutOfRangeException) { }
+        }
+
+        private void F3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadForm();
         }
 
         private void LoadForm()
