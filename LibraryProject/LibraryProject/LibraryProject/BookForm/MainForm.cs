@@ -39,15 +39,16 @@ namespace LibraryProject
 
         private void btn_SearchB_Click(object sender, EventArgs e)
         {
-                _SearchForm F4 = new _SearchForm();
-                F4.MdiParent = this.MdiParent;
-                F4.Show();
+            _SearchForm F4 = new _SearchForm();
+            F4.MdiParent = this.MdiParent;
+            F4.Closed += F4_Closed;
+            F4.Show();
         }
-
-        private void F4_FormClosed(object sender, FormClosedEventArgs e)
+        private void F4_Closed(object sender, EventArgs e)
         {
             LoadForm();
         }
+        
 
         private void btn_DeleteB_Click(object sender, EventArgs e)
         {
