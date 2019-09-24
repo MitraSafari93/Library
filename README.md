@@ -1,4 +1,4 @@
 # Library
 ***************************************************************
 
-notice: put your connection string in app.config file.
+Notice: put your connection string in app.config file.
