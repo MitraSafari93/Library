@@ -17,6 +17,7 @@ namespace LibraryProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            //some text for test2
         }
     }
 }
